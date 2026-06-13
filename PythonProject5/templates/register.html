@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Donor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>🩸 Blood Donor App</h1>
+    <div>
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/search">Search</a>
+      <a href="/admin_login">Admin</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Register as a Donor</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>Full Name</label>
+      <input type="text" name="name" placeholder="Your full name" required>
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" placeholder="Your phone number" required>
+
+      <label>City / Location</label>
+      <input type="text" name="city" placeholder="Your city" required>
+
+      <label>Blood Group</label>
+      <select name="blood" required>
+        <option value="">-- Select Blood Group --</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+        <option>O+</option><option>O-</option>
+      </select>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
+</body>
+</html>

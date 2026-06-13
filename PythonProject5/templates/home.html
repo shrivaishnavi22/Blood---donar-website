@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood Donor App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>🩸 Blood Donor App</h1>
+    <div>
+      <a href="/">Home</a>
+      <a href="/register">Register as Donor</a>
+      <a href="/search">Find Donors</a>
+      <a href="/admin_login">Admin</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h2>Give the Gift of Life</h2>
+    <p>Register as a blood donor or find donors in your city.</p>
+    <a href="/register" class="btn">Become a Donor</a>
+    <a href="/search" class="btn btn-outline">Find Donors</a>
+  </div>
+</body>
+</html>

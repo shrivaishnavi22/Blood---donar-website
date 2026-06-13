@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Donors</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>🩸 Blood Donor App</h1>
+    <div>
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/search">Search</a>
+      <a href="/admin_login">Admin</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Find Blood Donors</h2>
+    <form method="POST">
+      <label>City</label>
+      <input type="text" name="city" placeholder="Enter city name">
+
+      <label>Blood Group</label>
+      <select name="blood">
+        <option value="">-- Any Blood Group --</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+        <option>O+</option><option>O-</option>
+      </select>
+
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    {% if searched %}
+      {% if donors %}
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Name</th><th>Phone</th><th>City</th><th>Blood Group</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in donors %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ d.name }}</td>
+              <td>{{ d.phone }}</td>
+              <td>{{ d.city }}</td>
+              <td><span class="badge">{{ d.blood }}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="no-result">No donors found matching your search.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</body>
+</html>

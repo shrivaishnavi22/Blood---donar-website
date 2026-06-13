@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>🩸 Admin Dashboard</h1>
+    <div>
+      <span>Welcome, {{ session.admin_username }}</span>
+      <a href="/admin_logout" class="btn btn-outline">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>All Registered Donors</h2>
+
+    {% if donors %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Phone</th><th>City</th><th>Blood Group</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in donors %}
+          <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.name }}</td>
+            <td>{{ d.phone }}</td>
+            <td>{{ d.city }}</td>
+            <td><span class="badge">{{ d.blood }}</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="no-result">No donors registered yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

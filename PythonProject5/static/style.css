@@ -1,0 +1,71 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #222; }
+
+nav {
+  background: #c0392b; color: white;
+  padding: 14px 30px; display: flex;
+  justify-content: space-between; align-items: center;
+}
+nav h1 { font-size: 1.3rem; }
+nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 0.95rem; }
+nav a:hover { text-decoration: underline; }
+
+.hero {
+  text-align: center; padding: 80px 20px;
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: white;
+}
+.hero h2 { font-size: 2.5rem; margin-bottom: 14px; }
+.hero p  { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+
+.btn {
+  display: inline-block; background: white; color: #c0392b;
+  padding: 12px 28px; border-radius: 6px; text-decoration: none;
+  font-weight: bold; margin: 6px; border: none; cursor: pointer;
+  font-size: 1rem; transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn-outline {
+  background: transparent; color: white;
+  border: 2px solid white;
+}
+
+.container {
+  max-width: 700px; margin: 40px auto;
+  background: white; padding: 36px;
+  border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.container h2 { margin-bottom: 24px; color: #c0392b; }
+
+label { display: block; margin-top: 14px; margin-bottom: 5px; font-weight: 600; }
+input, select {
+  width: 100%; padding: 10px 14px;
+  border: 1px solid #ddd; border-radius: 6px;
+  font-size: 1rem;
+}
+input:focus, select:focus { outline: none; border-color: #c0392b; }
+
+form .btn { margin-top: 20px; width: 100%; background: #c0392b; color: white; }
+form .btn:hover { background: #a93226; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+th { background: #c0392b; color: white; padding: 10px 14px; text-align: left; }
+td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+tr:hover td { background: #fef9f9; }
+
+.badge {
+  background: #e74c3c; color: white;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 0.85rem; font-weight: bold;
+}
+
+.alert { padding: 10px 16px; border-radius: 6px; margin-bottom: 16px; }
+.alert.success { background: #d4edda; color: #155724; }
+.alert.error   { background: #f8d7da; color: #721c24; }
+
+.no-result { text-align: center; padding: 30px; color: #888; font-size: 1.1rem; }
+
+.auth-box { max-width: 420px; margin: 80px auto; }
+.auth-box p { margin-top: 16px; text-align: center; }
+.auth-box a { color: #c0392b; }

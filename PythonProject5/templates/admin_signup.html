@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Signup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container auth-box">
+    <h2>Admin Signup</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="admin@email.com" required>
+
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Choose a username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Create a password" required>
+
+      <button type="submit" class="btn">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="/admin_login">Login here</a></p>
+  </div>
+</body>
+</html>
